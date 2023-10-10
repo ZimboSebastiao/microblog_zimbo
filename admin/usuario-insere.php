@@ -6,10 +6,16 @@ $usuario = new Usuario;
 
 if (isset($_POST['inserir'])) {
 	$usuario = new Usuario;
-	$usuario->getNome($_POST['nome']);
-	$usuario->getEmail($_POST['email']);
-	$usuario->getTipo($_POST['tipo']);
-	// $usuario->getSenha($_POST['senha']);
+	$usuario->setNome($_POST['nome']);
+	$usuario->setEmail($_POST['email']);
+	$usuario->setTipo($_POST['tipo']);
+	// Primeiro codificamos a senha. depois o retorno (já codificado) e passamos ao setter
+	$usuario->setSenha($usuario->codificaSenha($_POST['senha']));
+
+	echo $usuario->getNome();
+	echo $usuario->getemail();
+	echo $usuario->getSenha();
+	echo $usuario->getTipo();
 }
 ?>
 
