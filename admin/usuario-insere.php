@@ -1,6 +1,6 @@
 <?php 
-require_once "../inc/cabecalho-admin.php";
 use Microblog\Usuario;
+require_once "../inc/cabecalho-admin.php";
 
 $usuario = new Usuario;
 
