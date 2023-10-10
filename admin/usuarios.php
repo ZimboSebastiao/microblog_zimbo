@@ -5,7 +5,7 @@ require_once "../inc/cabecalho-admin.php";
 
 $usuario = new Usuario;
 $listaUsuario = $usuario->listar();
-Utilitarios::dump($listaUsuario);
+// Utilitarios::dump($listaUsuario);
 ?>
 
 
