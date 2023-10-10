@@ -12,12 +12,10 @@ if (isset($_POST['inserir'])) {
 	// Primeiro codificamos a senha. depois o retorno (já codificado) e passamos ao setter
 	$usuario->setSenha($usuario->codificaSenha($_POST['senha']));
 
-	echo $usuario->getNome();
-	echo $usuario->getemail();
-	echo $usuario->getSenha();
-	echo $usuario->getTipo();
+	$usuario->inserir();
+	header("location:usuarios.php");
 }
-?>
+	?>
 
 
 <div class="row">
