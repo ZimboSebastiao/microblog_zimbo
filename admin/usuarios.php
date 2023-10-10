@@ -4,6 +4,7 @@ require_once "../inc/cabecalho-admin.php";
 
 $usuario = new Usuario;
 $listaUsuario = $usuario->listar();
+
 ?>
 
 
@@ -11,7 +12,7 @@ $listaUsuario = $usuario->listar();
 	<article class="col-12 bg-white rounded shadow my-1 py-4">
 		
 		<h2 class="text-center">
-		Usuários <span class="badge bg-dark">X</span>
+		Usuários <span class="badge bg-dark"><?=count($listaUsuario)?></span>
 		</h2>
 
 		<p class="text-center mt-5">
@@ -33,19 +34,19 @@ $listaUsuario = $usuario->listar();
 				</thead>
 
 				<tbody>
-				<?php foreach($listaUsuario as $usuario){ ?>
+				<?php foreach($listaUsuario as $user){ ?>
 					<tr>
-						<td> <?=$usuario["nome"]?> </td>
-						<td> <?=$usuario["email"]?> </td>
-						<td> <?=$usuario["tipo"]?> </td>
+						<td> <?=$user["nome"]?> </td>
+						<td> <?=$user["email"]?> </td>
+						<td> <?=$user["tipo"]?> </td>
 						<td class="text-center">
 							<a class="btn btn-warning" 
-							href="usuario-atualiza.php?id=<?=$usuario["id"]?>">
+							href="usuario-atualiza.php?id=<?=$user["id"]?>">
 							<i class="bi bi-pencil"></i> Atualizar
 							</a>
 						
 							<a class="btn btn-danger excluir" 
-							href="usuario-exclui.php?id=<?=$usuario["id"]?>">
+							href="usuario-exclui.php?id=<?=$user["id"]?>">
 							<i class="bi bi-trash"></i> Excluir
 							</a>
 						</td>
