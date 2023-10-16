@@ -70,7 +70,7 @@ class Usuario {
 
     // Update de Usariao
     public function atualizar():void {
-        $sql = "UPDATE usuarios SET nome - :nome, email = :email, senha = :senha, tipo = :tipo WHERE id = :id";
+        $sql = "UPDATE usuarios SET nome = :nome, email = :email, senha = :senha, tipo = :tipo WHERE id = :id";
 
         try {
             $consulta = $this->conexao->prepare(($sql));
