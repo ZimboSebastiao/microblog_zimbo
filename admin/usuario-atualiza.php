@@ -4,10 +4,19 @@ use Microblog\Utilitarios;
 require_once "../inc/cabecalho-admin.php";
 
 $usuario = new Usuario;
+
+// Script para carregamentp
 $usuario->setId($_GET['id']);
 $dados = $usuario->listarUm();
 // Utilitarios::dump($dados);
 
+// Script para atualização
+if(isset($_POST["atualizar"])){
+	$usuario->setNome($_POST['nome']);
+	$usuario->setEmail($_POST['email']);
+	$usuario->setTipo($_POST['tipo']);
+
+}
 
 
 
