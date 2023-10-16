@@ -16,6 +16,21 @@ if(isset($_POST["atualizar"])){
 	$usuario->setEmail($_POST['email']);
 	$usuario->setTipo($_POST['tipo']);
 
+	// Algoritmo geral para tratamento da senha
+
+	if(empty($_POST['senha'])){
+		// simplementse repassamos a senha lá existente no banco $dados['senha'] para o objeto ateavés do setSenha, sem qualquer alteração
+		$usuario->setSenha($dados['senha']);
+	} else {
+		$usuario->setSenha(
+
+			$usuario->verificaSenha($_POST['senha'], $dados['senha'])
+		);
+		
+	}
+	
+
+	echo $usuario->getSenha();
 }
 
 

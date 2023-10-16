@@ -92,6 +92,19 @@ class Usuario {
        return password_hash($senha, PASSWORD_DEFAULT);
     }
 
+
+    // Usamos a função password_verify() para comparar as duas senhas: a digitada no formulário e a existente no banco de dados.
+
+    
+    public function verificaSenha(string $senhaFormulario, string $senhaBanco):string{
+        if (password_verify($senhaFormulario, $senhaBanco)){
+            // se forem IGUAIS, mantemos a senha já existente, sem qualquer modificação
+            return $senhaBanco;
+        } else {
+            // se forem DIFERENTES, então a nova senha (ou seja, a que foi digitada no formulario) DEVE ser modificada
+            return $this->codificaSenha($senhaFormulario);
+        }
+    }
     
 
 
