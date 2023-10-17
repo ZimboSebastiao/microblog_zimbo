@@ -3,6 +3,7 @@ use Microblog\ControleDeAcesso;
 use Microblog\Usuario;
 require_once "inc/cabecalho.php";
 
+
 // Programação das mensagens de feedback
 
 if (isset($_GET["campos_obrigatorios"])) {
@@ -46,7 +47,18 @@ if (isset($_GET["campos_obrigatorios"])) {
 					if(empty($_POST['email']) || empty($_POST['senha'])){
 						header("location:login.php?campos_obrigatorios");
 					} else {
-						echo "Ok, você pode logar";
+						// Captuara o email
+						$usuario = new Usuario;
+						$usuario->setEmail($_POST['email']);
+
+						// Buscar o usuário/email, no Banco de dados
+
+						// Se não existir o usuário/email continuará em login.php
+
+						// Se existir:
+							// - Verificar a senha
+							// - está correta? iniciar processo de login
+							// - não está? continuará em login.php
 					}
 
 
