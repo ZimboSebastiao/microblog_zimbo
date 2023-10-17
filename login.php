@@ -1,5 +1,9 @@
 <?php 
+use Microblog\ControleDeAcesso;
+use Microblog\Usuario;
 require_once "inc/cabecalho.php";
+
+
 ?>
 
 
@@ -24,6 +28,24 @@ require_once "inc/cabecalho.php";
 				<button class="btn btn-primary btn-lg" name="entrar" type="submit">Entrar</button>
 
 			</form>
+
+			<?php
+
+				if(isset($_POST['entrar'])){
+					// verificar se os campos foram preenchidos
+
+					if(empty($_POST['email']) || empty($_POST['senha'])){
+						header("location:login.php");
+					} else {
+						echo "Ok, você pode logar";
+					}
+
+
+
+
+				}
+			
+			?>
     </div>
     
     
