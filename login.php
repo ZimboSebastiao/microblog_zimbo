@@ -67,9 +67,12 @@ if (isset($_GET["campos_obrigatorios"])) {
 								// - Verificar a senha
 								if(password_verify($_POST['senha'], $dados['senha'])){
 									// - está correta? iniciar processo de login
-									echo "Senha Correta!";
+									$sessao = new ControleDeAcesso;
+									$sessao->login($dados['id'], $dados['nome'], $dados['tipo']);
+									header("location:admin/index.php");
 								} else {
-									echo "Senha incorreta!";
+									header("location:login.php?dados_incorretos");
+									
 
 								}
 								// - não está? continuará em login.php
