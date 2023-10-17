@@ -10,6 +10,8 @@ require_once "inc/cabecalho.php";
 
 if (isset($_GET["campos_obrigatorios"])) {
 	$feedback = "Preencha e-mail e senha!";
+} elseif(isset($_GET['dados_incorretos'])){
+	$feedback = "Email ou senha incorreta!";
 }
 ?>
 
@@ -55,13 +57,23 @@ if (isset($_GET["campos_obrigatorios"])) {
 
 						// Buscar o usuário/email, no Banco de dados
 						$dados = $usuario->buscar();
-						Utilitarios::dump($dados);
+						
 						// Se não existir o usuário/email continuará em login.php
+						if (!$dados) { // ou if($dados === false)
+							header("location:login.php?dados_incorretos");
+						}  else {
+							
+							// Se existir:
+								// - Verificar a senha
+								if(password_verify($_POST['senha'], $dados['senha'])){
+									// - está correta? iniciar processo de login
+									echo "Senha Correta!";
+								} else {
+									echo "Senha incorreta!";
 
-						// Se existir:
-							// - Verificar a senha
-							// - está correta? iniciar processo de login
-							// - não está? continuará em login.php
+								}
+								// - não está? continuará em login.php
+						}
 					}
 
 
