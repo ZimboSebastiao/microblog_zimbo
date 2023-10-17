@@ -9,7 +9,7 @@ require_once "inc/cabecalho.php";
 // Programação das mensagens de feedback
 
 if (isset($_GET["campos_obrigatorios"])) {
-	$feedback = "Você deve logar primeiro";
+	$feedback = "Preencha e-mail e senha!";
 }
 ?>
 
