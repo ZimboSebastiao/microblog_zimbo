@@ -1,6 +1,8 @@
 <?php 
 use Microblog\ControleDeAcesso;
 use Microblog\Usuario;
+use Microblog\Utilitarios;
+
 require_once "inc/cabecalho.php";
 
 
@@ -52,7 +54,8 @@ if (isset($_GET["campos_obrigatorios"])) {
 						$usuario->setEmail($_POST['email']);
 
 						// Buscar o usuário/email, no Banco de dados
-
+						$dados = $usuario->buscar();
+						Utilitarios::dump($dados);
 						// Se não existir o usuário/email continuará em login.php
 
 						// Se existir:
