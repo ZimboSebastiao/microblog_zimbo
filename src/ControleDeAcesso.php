@@ -2,7 +2,7 @@
 
 namespace Microblog;
 
-final final class ControleDeAcesso {
+final class ControleDeAcesso {
 
     public function __construct(){
         // Se não existir uma sessão em andamento
