@@ -1,4 +1,13 @@
-<?php require_once "../vendor/autoload.php"; ?>
+<?php 
+use Microblog\ControleDeAcesso;
+require_once "../vendor/autoload.php";
+
+// Criando um objeto para acesso os recursos da class ControleDeAcesso
+$sessao = new ControleDeAcesso;
+
+// Executando o método que verifica se tem alguém logado
+$sessao->verificaAcesso();
+?>
 <!DOCTYPE html>
 <html lang="pt-br" class="h-100">
 <head>
