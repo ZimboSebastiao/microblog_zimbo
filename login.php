@@ -12,6 +12,8 @@ if (isset($_GET["campos_obrigatorios"])) {
 	$feedback = "Preencha e-mail e senha!";
 } elseif(isset($_GET['dados_incorretos'])){
 	$feedback = "Email ou senha incorreta!";
+} elseif(isset($_GET['logout'])){
+	$feedback = "Você saiu do sistema!";
 }
 ?>
 
@@ -72,10 +74,9 @@ if (isset($_GET["campos_obrigatorios"])) {
 									header("location:admin/index.php");
 								} else {
 									header("location:login.php?dados_incorretos");
+									// - não está? continuará em login.php
 									
-
 								}
-								// - não está? continuará em login.php
 						}
 					}
 
