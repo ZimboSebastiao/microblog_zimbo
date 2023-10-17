@@ -14,6 +14,8 @@ if (isset($_GET["campos_obrigatorios"])) {
 	$feedback = "Email ou senha incorreta!";
 } elseif(isset($_GET['logout'])){
 	$feedback = "Você saiu do sistema!";
+}elseif(isset($_GET['acesso_proibido'])){
+	$feedback = "Você deve logar primeiro!";
 }
 ?>
 
