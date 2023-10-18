@@ -25,6 +25,15 @@ final class ControleDeAcesso {
         }
     }
 
+    public function verificaAcessoAdmin():void{
+        // se o tipo de usuario logado na sessão não for admin
+        if ($_SESSION["tipo"] != "admin") {
+            header("location:nao-autorizado.php");
+            die();
+        }
+    }
+
+
 
     public function login(int $id, string $nome, string $tipo):void{
         // No momento em que ocorre o login, criamos variáveis de sessão contendo os dados que queremos monitorar atráves da sessão enquanto a pessoa estiver logada
