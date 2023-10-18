@@ -1,5 +1,13 @@
 <?php 
+use Microblog\Usuario;
+use Microblog\Utilitarios;
 require_once "../inc/cabecalho-admin.php";
+
+$usuario = new Usuario;
+// Atribuimos ao objeto o ID  do usuario logado na sessão
+$usuario->setId($_SESSION['id']);
+$dados = $usuario->listarUm();
+// Utilitarios::dump($dados);
 ?>
 
 
@@ -14,17 +22,17 @@ require_once "../inc/cabecalho-admin.php";
 
 			<div class="mb-3">
 				<label class="form-label" for="nome">Nome:</label>
-				<input class="form-control" type="text" id="nome" name="nome" required>
+				<input class="form-control" type="text" id="nome" name="nome" value="<?=$dados['nome']?>" required>
 			</div>
 
 			<div class="mb-3">
 				<label class="form-label" for="email">E-mail:</label>
-				<input class="form-control" type="email" id="email" name="email" required>
+				<input class="form-control" type="email" id="email" name="email" value="<?=$dados['email']?>" required>
 			</div>
 
 			<div class="mb-3">
 				<label class="form-label" for="senha">Senha:</label>
-				<input class="form-control" type="password" id="senha" name="senha" placeholder="Preencha apenas se for alterar">
+				<input class="form-control" type="password" id="senha" name="senha"  placeholder="Preencha apenas se for alterar">
 			</div>
 
 			<button class="btn btn-primary" name="atualizar"><i class="bi bi-arrow-clockwise"></i> Atualizar</button>
