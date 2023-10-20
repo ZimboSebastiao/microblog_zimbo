@@ -1,6 +1,21 @@
 <?php 
+use Microblog\Usuario;
 require_once "../inc/cabecalho-admin.php";
-?>
+
+$usuario = new Usuario;
+
+if (isset($_POST['inserir'])) {
+	$usuario = new Usuario;
+	$usuario->setNome($_POST['nome']);
+	$usuario->setEmail($_POST['email']);
+	$usuario->setTipo($_POST['tipo']);
+	// Primeiro codificamos a senha. depois o retorno (já codificado) e passamos ao setter
+	$usuario->setSenha($usuario->codificaSenha($_POST['senha']));
+
+	$usuario->inserir();
+	header("location:usuarios.php");
+}
+	?>
 
 
 <div class="row">

@@ -1,5 +1,40 @@
 <?php 
+use Microblog\Usuario;
+use Microblog\Utilitarios;
 require_once "../inc/cabecalho-admin.php";
+
+$usuario = new Usuario;
+
+// Script para carregamentp
+$usuario->setId($_GET['id']);
+$dados = $usuario->listarUm();
+// Utilitarios::dump($dados);
+
+// Script para atualização
+if(isset($_POST["atualizar"])){
+	$usuario->setNome($_POST['nome']);
+	$usuario->setEmail($_POST['email']);
+	$usuario->setTipo($_POST['tipo']);
+
+	// Algoritmo geral para tratamento da senha
+
+	if(empty($_POST['senha'])){
+		// simplementse repassamos a senha lá existente no banco $dados['senha'] para o objeto ateavés do setSenha, sem qualquer alteração
+		$usuario->setSenha($dados['senha']);
+	} else {
+		$usuario->setSenha(
+
+			$usuario->verificaSenha($_POST['senha'], $dados['senha'])
+		);
+		
+	}
+	
+
+	$usuario->atualizar(); 
+    header("location:usuarios.php?status=sucesso");
+}
+
+
 ?>
 
 
@@ -14,12 +49,12 @@ require_once "../inc/cabecalho-admin.php";
 
 			<div class="mb-3">
 				<label class="form-label" for="nome">Nome:</label>
-				<input class="form-control" type="text" id="nome" name="nome" required>
+				<input class="form-control" type="text" id="nome" name="nome" value="<?=$dados['nome']?>" required>
 			</div>
 
 			<div class="mb-3">
 				<label class="form-label" for="email">E-mail:</label>
-				<input class="form-control" type="email" id="email" name="email" required>
+				<input class="form-control" type="email" id="email" name="email" value="<?=$dados['email']?>" required>
 			</div>
 
 			<div class="mb-3">
@@ -31,8 +66,8 @@ require_once "../inc/cabecalho-admin.php";
 				<label class="form-label" for="tipo">Tipo:</label>
 				<select class="form-select" name="tipo" id="tipo" required>
 					<option value=""></option>
-					<option value="editor">Editor</option>
-					<option value="admin">Administrador</option>
+					<option <?php if($dados['tipo']  === 'editor') echo " selected ";?> value="editor">Editor</option>
+					<option <?php if($dados['tipo']  === 'admin') echo " selected ";?> value="admin">Administrador</option>
 				</select>
 			</div>
 			
