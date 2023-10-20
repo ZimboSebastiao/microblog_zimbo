@@ -117,6 +117,23 @@ class Usuario {
             return $this->codificaSenha($senhaFormulario);
         }
     }
+
+    // Buscar no banco
+    public function buscar():array | bool{ // tipos de saidas só no php 7.4 par cima
+        $sql = "SELECT * FROM usuarios WHERE email = :email";
+
+        
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue("email", $this->email, PDO::PARAM_STR);
+            $consulta->execute();
+            $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+            
+        } catch (Exception $erro) {
+            die("Erro ao buscar no banco ".$erro->getMessage());
+        }
+        return $resultado;
+    }
     
 
 

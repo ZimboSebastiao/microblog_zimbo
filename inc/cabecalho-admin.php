@@ -1,4 +1,17 @@
-<?php require_once "../vendor/autoload.php"; ?>
+<?php 
+use Microblog\ControleDeAcesso;
+require_once "../vendor/autoload.php";
+
+// Criando um objeto para acesso os recursos da class ControleDeAcesso
+$sessao = new ControleDeAcesso;
+
+// Executando o método que verifica se tem alguém logado
+$sessao->verificaAcesso();
+
+// se parametro sair existir (algo que acontece quando o usuário clica no link "sair"), então faça o logout do sistema
+if (isset($_GET['sair'])) $sessao->logout();
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br" class="h-100">
 <head>
@@ -38,15 +51,18 @@
             <li class="nav-item">
                 <a class="nav-link" href="noticias.php">Notícias</a>
             </li>
+
+            <?php  if($_SESSION["tipo"] === "admin"){?>
+
             <li class="nav-item">
                 <a class="nav-link" href="usuarios.php">Usuários</a>
             </li>
-
+            <?php } ?>
             <li class="nav-item">
                 <a class="nav-link" href="../index.php" target="_blank">Área pública</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link fw-bold" href=""> <i class="bi bi-x-circle"></i> Sair</a>
+                <a class="nav-link fw-bold" href="?sair"> <i class="bi bi-x-circle"></i> Sair</a>
             </li>
         </ul>
 

@@ -1,11 +1,13 @@
 <?php 
 use Microblog\Usuario;
-use Microblog\Utilitarios;
 require_once "../inc/cabecalho-admin.php";
+
+// Verificando se que está acessando a página pode acessar
+$sessao->verificaAcessoAdmin();
 
 $usuario = new Usuario;
 $listaUsuario = $usuario->listar();
-// Utilitarios::dump($listaUsuario);
+
 ?>
 
 
