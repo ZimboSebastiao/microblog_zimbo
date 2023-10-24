@@ -1,12 +1,11 @@
 <?php 
 use Microblog\Noticia;
 use Microblog\Utilitarios;
-use Microblog\Categoria;
 require_once "../inc/cabecalho-admin.php";
 
-$categoria = new Categoria;
+$noticia = new Noticia;
 
-$listaCategoria = $categoria->ler();
+$listaCategoria = $noticia->categoria->ler();
 // Utilitarios::dump($listaCategoria);
 ?>
 
