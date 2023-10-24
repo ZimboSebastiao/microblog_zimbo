@@ -20,12 +20,20 @@ if (isset($_POST['inserir'])) {
 	$noticia->categoria->setId($_POST["categoria"]);
 
 	// Sobre a imagem
-	// - capturar o arquivo de imagem e enviar para o servidor
-
-	// - capturar o nome/extensão e enviar para o banco de dados
-
+	// - Capturar o arquivo de imagem 
 	$imagem = $_FILES["imagem"];
-	Utilitarios::dump($imagem);
+
+	// Enviar para o servidor
+	$noticia->upload($imagem);
+
+	// - Capturar o nome/extensão e enviar para o objeto
+	$noticia->setImagem($imagem["name"]);
+
+	// Executar no banco
+	$noticia->inserir();
+
+	header("location:noticias.php");
+
 
 
 
