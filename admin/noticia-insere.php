@@ -7,7 +7,7 @@ require_once "../inc/cabecalho-admin.php";
 $categoria = new Categoria;
 
 $listaCategoria = $categoria->ler();
-Utilitarios::dump($listaCategoria);
+// Utilitarios::dump($listaCategoria);
 ?>
 
 
