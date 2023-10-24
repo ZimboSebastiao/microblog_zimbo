@@ -25,7 +25,7 @@ $listaCategoria = $categoria->ler();
                 <select class="form-select" name="categoria" id="categoria" required>
 					<option value=""></option>
 					<?php foreach($listaCategoria as $categ){ ?>
-					<option value="<?=$categ["nome"]?>"><?=$categ["nome"]?></option>
+					<option value="<?=$categ["id"]?>"><?=$categ["nome"]?></option>
 					<?php }?>
 				</select>
 			</div>
