@@ -1,11 +1,13 @@
 <?php 
 use Microblog\Noticia;
 use Microblog\Utilitarios;
+use Microblog\Categoria;
 require_once "../inc/cabecalho-admin.php";
 
-$noticia = new Noticia;
+$categoria = new Categoria;
 
-Utilitarios::dump($noticia);
+$listaCategoria = $categoria->ler();
+Utilitarios::dump($listaCategoria);
 ?>
 
 
@@ -21,10 +23,10 @@ Utilitarios::dump($noticia);
             <div class="mb-3">
                 <label class="form-label" for="categoria">Categoria:</label>
                 <select class="form-select" name="categoria" id="categoria" required>
+					<?php foreach($listaCategoria as $categ){ ?>
 					<option value=""></option>
-					<option value="1">Ciência</option>
-					<option value="2">Educação</option>
-					<option value="3">Tecnologia</option>
+					<option value="<?=$categ["nome"]?>"><?=$categ["nome"]?></option>
+					<?php }?>
 				</select>
 			</div>
 
