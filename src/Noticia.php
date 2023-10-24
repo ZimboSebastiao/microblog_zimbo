@@ -32,6 +32,99 @@ final class Noticia {
     }
 
 
+
+       // Inserir Noticia
+       public function inserir():void {
+        $sql = "INSERT noticias(titulo, texto, resumo, imagem, destaque, usuario_id, categoria_id)
+                VALUES(:titulo, :texto, :resumo, :imagem, :destaque, :usuario_id, :categoria_id)";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue(":titulo", $this->titulo, PDO::PARAM_STR);
+            $consulta->bindValue(":texto", $this->texto, PDO::PARAM_STR);
+            $consulta->bindValue(":resumo", $this->resumo, PDO::PARAM_STR);
+            $consulta->bindValue(":imagem", $this->imagem, PDO::PARAM_STR);
+            $consulta->bindValue(":destaque", $this->destaque, PDO::PARAM_STR);
+
+            // Aqui, primeiro chamamos os getters de ID do Usuario e de Categoria para só depois associar os valores aos parâmetros de consulta SQL.
+            // Isso é possível devido a associação entre as classes.
+            $consulta->bindValue(":usuario_id", $this->usuario->getId(), PDO::PARAM_INT);
+            $consulta->bindValue(":categoria_id", $this->categoria->getId(), PDO::PARAM_INT);
+            $consulta->execute();
+           
+        } catch (Exception $erro) {
+           die("Erro ao inserir Noticia: ".$erro->getMessage());
+        }
+    }
+
+    // Ler todas Noticia
+    public function ler():array {
+        $sql = "SELECT * FROM noticias ORDER BY nome";
+        
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->execute();
+            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $erro) {
+            die("Erro ao ler noticias: ".$erro->getMessage());
+        }    
+
+        return $resultado;
+    }
+
+    // Ler uma Noticia
+    public function lerUm():array {
+        $sql = "SELECT * FROM noticias WHERE id = :id";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+            $consulta->execute();
+            $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $erro) {
+            die("Erro ao carregar os dados: ".$erro->getMessage());
+        }
+
+        return $resultado;
+    }
+
+    // Atualizar uma Noticia 
+    public function atualizar():void {
+        $sql = "UPDATE noticias SET titulo = :titulo WHERE id = :id";
+
+        try {
+            $consulta = $this->conexao->prepare(($sql));
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+            $consulta->bindValue(":titulo", $this->titulo, PDO::PARAM_STR);
+            $consulta->execute();
+        
+        } catch (Exception $erro) {
+            die("Erro ao atualizar noticia: ".$erro->getMessage());
+        }
+    }
+
+    // Excluir uma categoria
+    public function excluir():void {
+        $sql = "DELETE FROM noticias WHERE id = :id";
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+            $consulta->execute();
+        } catch (Exception $erro) {
+            die("Erro ao excluir noticia ".$erro->getMessage());
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
    
     public function getId(): int
     {
