@@ -24,6 +24,10 @@ if (isset($_POST['inserir'])) {
 
 	// - capturar o nome/extensão e enviar para o banco de dados
 
+	$imagem = $_FILES["imagem"];
+	Utilitarios::dump($imagem);
+
+
 
 }
 ?>
