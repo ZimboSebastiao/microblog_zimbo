@@ -23,8 +23,8 @@ Utilitarios::dump($listaCategoria);
             <div class="mb-3">
                 <label class="form-label" for="categoria">Categoria:</label>
                 <select class="form-select" name="categoria" id="categoria" required>
-					<?php foreach($listaCategoria as $categ){ ?>
 					<option value=""></option>
+					<?php foreach($listaCategoria as $categ){ ?>
 					<option value="<?=$categ["nome"]?>"><?=$categ["nome"]?></option>
 					<?php }?>
 				</select>
