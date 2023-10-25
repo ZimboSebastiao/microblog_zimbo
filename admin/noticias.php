@@ -46,20 +46,22 @@ $listaDeNoticias = $noticia->listar();
 				</thead>
 
 				<tbody>
-				<?php foreach ($listaDeNoticias as $itemNoticias) { ?>
+				<?php foreach ($listaDeNoticias as $itemNoticia) { ?>
 					<tr>
-                        <td> <?= $itemNoticias["titulo"]?>  </td>
-                        <td> <?= $itemNoticias["data"]?> </td>
-                        <td> <?= $itemNoticias["autor"]?>  </td>
-                        <td> <?= $itemNoticias["destaque"]?>  </td>
+                        <td> <?= $itemNoticia["titulo"]?>  </td>
+                        <td> <?= $itemNoticia["data"]?> </td>
+						<?php if ($_SESSION["tipo"] === "admin") { ?>
+                        <td> <?= $itemNoticia["autor"]?>  </td>
+						<?php }?>
+                        <td> <?= $itemNoticia["destaque"]?>  </td>
 						<td class="text-center">
 							<a class="btn btn-warning" 
-							href="noticia-atualiza.php?id=<?=$itemNoticias["id"]?>">
+							href="noticia-atualiza.php?id=<?=$noticia->usuario->getId($_SESSION["id"])?>">
 							<i class="bi bi-pencil"></i> Atualizar
 							</a>
 						
 							<a class="btn btn-danger excluir" 
-							href="noticia-exclui.php?id=<?=$itemNoticias["id"]?>">
+							href="noticia-exclui.php?id=<?=$noticia->usuario->getId($_SESSION["id"])?>">
 							<i class="bi bi-trash"></i> Excluir
 							</a>
 						</td>
