@@ -1,6 +1,7 @@
 <?php
 require_once "../inc/cabecalho-admin.php";
 use Microblog\Noticia;
+use Microblog\Utilitarios;
 
 $noticia = new Noticia;
 $listaCategoria = $noticia->categoria->ler();
@@ -9,6 +10,7 @@ $noticia->usuario->setId($_SESSION["id"]);
 $noticia->usuario->setTipo($_SESSION["tipo"]);
 $noticia->setId($_GET['id']);
 $dados = $noticia->listarUm();
+Utilitarios::dump($dados);
 ?>
 
 
