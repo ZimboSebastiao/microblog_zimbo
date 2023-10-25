@@ -63,10 +63,14 @@ $dados = $noticia->listarUm();
 
             <div class="mb-3">
                 <p>Deixar a notícia em destaque?
-                    <input type="radio" class="btn-check" name="destaque" id="nao" autocomplete="off" checked value="nao">
+                    <input 
+                    <?php if ($dados["destaque"] == "nao") echo " checked " ?>
+                    type="radio" class="btn-check" name="destaque" id="nao" autocomplete="off" checked value="nao">
                     <label class="btn btn-outline-danger" for="nao">Não</label>
 
-                    <input type="radio" class="btn-check" name="destaque" id="sim" autocomplete="off" value="sim">
+                    <input 
+                    <?php if ($dados["destaque"] == "sim") echo " checked " ?>
+                    type="radio" class="btn-check" name="destaque" id="sim" autocomplete="off" value="sim">
                     <label class="btn btn-outline-success" for="sim">Sim</label>
                 </p>
             </div>
