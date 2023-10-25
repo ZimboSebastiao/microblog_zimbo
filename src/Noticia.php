@@ -57,9 +57,23 @@ final class Noticia {
         }
     }
 
+
+
+
     // Ler todas Noticia
-    public function ler():array {
-        $sql = "SELECT * FROM noticias ORDER BY nome";
+    public function listar():array {
+        $sql = "SELECT 
+                    noticias.titulo, 
+                    noticias.data, 
+                    usuarios.nome AS autor, 
+                    usuarios.id,
+                    noticias.destaque
+                FROM noticias INNER JOIN usuarios
+                ON noticias.usuario_id = usuarios.id
+                ORDER BY data DESC
+                 ";
+
+
         
         try {
             $consulta = $this->conexao->prepare($sql);
@@ -152,6 +166,7 @@ final class Noticia {
         move_uploaded_file($temporario, $pastaFinal);
 
     }
+
 
 
 
