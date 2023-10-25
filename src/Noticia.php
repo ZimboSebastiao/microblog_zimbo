@@ -72,16 +72,19 @@ final class Noticia {
             // Senão, considere o sql abaixo (Pega somente referente ao editor)
             $sql = "SELECT titulo, data, destaque
                     FROM noticias WHERE usuario_id = :usuario_id ORDER BY data DESC";
+
         }
-        
-        
+
         try {
             $consulta = $this->conexao->prepare($sql);
+            $consulta ->bindValue(":usuario_id", $this->usuario->getId(), PDO::PARAM_INT);
             $consulta->execute();
             $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
         } catch (Exception $erro) {
             die("Erro ao ler noticias: ".$erro->getMessage());
         }    
+        
+        
 
         return $resultado;
     }
