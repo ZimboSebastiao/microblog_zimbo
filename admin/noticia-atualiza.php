@@ -10,7 +10,7 @@ $noticia->usuario->setId($_SESSION["id"]);
 $noticia->usuario->setTipo($_SESSION["tipo"]);
 $noticia->setId($_GET['id']);
 $dados = $noticia->listarUm();
-Utilitarios::dump($dados);
+// Utilitarios::dump($dados);
 ?>
 
 
@@ -21,38 +21,39 @@ Utilitarios::dump($dados);
             Atualizar dados da notícia
         </h2>
 
-        <form class="mx-auto w-75" action="" method="post" id="form-atualizar" name="form-atualizar">
+        <form class="mx-auto w-75" action="" method="post" id="form-atualizar" name="form-atualizar" enctype="multipart/form-data">
 
             <div class="mb-3">
                 <label class="form-label" for="categoria">Categoria:</label>
                 <select class="form-select" name="categoria" id="categoria" required>
                 <option value=""></option>
                 <?php foreach($listaCategoria as $categ){ ?>
-					<option value="<?=$categ["id"]?>"><?=$categ["nome"]?></option>
+					<option <?php if ($dados["categoria_id"] === $categ["id"]) echo " selected "?>
+                     value="<?=$categ["id"]?>"><?=$categ["nome"]?></option>
 					<?php }?>
                 </select>
             </div>
 
             <div class="mb-3">
                 <label class="form-label" for="titulo">Título:</label>
-                <input class="form-control" required type="text" id="titulo" name="titulo">
+                <input class="form-control" required type="text" id="titulo" name="titulo" value="<?= $dados["titulo"]?>" >
             </div>
 
             <div class="mb-3">
                 <label class="form-label" for="texto">Texto:</label>
-                <textarea class="form-control" required name="texto" id="texto" cols="50" rows="6"></textarea>
+                <textarea class="form-control" required name="texto" id="texto" cols="50" rows="6" ><?= $dados["texto"]?></textarea>
             </div>
 
             <div class="mb-3">
                 <label class="form-label" for="resumo">Resumo (máximo de 300 caracteres):</label>
                 <span id="maximo" class="badge bg-danger">0</span>
-                <textarea class="form-control" required name="resumo" id="resumo" cols="50" rows="2" maxlength="300"></textarea>
+                <textarea class="form-control" required name="resumo" id="resumo" cols="50" rows="2" maxlength="300" ><?= $dados["resumo"]?></textarea>
             </div>
 
             <div class="mb-3">
                 <label for="imagem-existente" class="form-label">Imagem da notícia:</label>
                 <!-- campo somente leitura, meramente informativo -->
-                <input class="form-control" type="text" id="imagem-existente" name="imagem-existente" readonly>
+                <input class="form-control" type="text" id="imagem-existente" name="imagem-existente" readonly value="<?= $dados["imagem"]?>">
             </div>
 
             <div class="mb-3">
