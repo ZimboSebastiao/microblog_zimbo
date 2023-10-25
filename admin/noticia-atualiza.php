@@ -1,5 +1,14 @@
 <?php
 require_once "../inc/cabecalho-admin.php";
+use Microblog\Noticia;
+
+$noticia = new Noticia;
+$listaCategoria = $noticia->categoria->ler();
+
+$noticia->usuario->setId($_SESSION["id"]);
+$noticia->usuario->setTipo($_SESSION["tipo"]);
+$noticia->setId($_GET['id']);
+$dados = $noticia->listarUm();
 ?>
 
 
@@ -15,10 +24,10 @@ require_once "../inc/cabecalho-admin.php";
             <div class="mb-3">
                 <label class="form-label" for="categoria">Categoria:</label>
                 <select class="form-select" name="categoria" id="categoria" required>
-                    <option value=""></option>
-                    <option value="1">Ciência</option>
-                    <option value="2">Educação</option>
-                    <option value="3">Tecnologia</option>
+                <option value=""></option>
+                <?php foreach($listaCategoria as $categ){ ?>
+					<option value="<?=$categ["id"]?>"><?=$categ["nome"]?></option>
+					<?php }?>
                 </select>
             </div>
 

@@ -1,16 +1,16 @@
 <?php 
 require_once "../inc/cabecalho-admin.php";
+
 use Microblog\Noticia;
 use Microblog\Utilitarios;
-
 $noticia = new Noticia;
 
-// Capturando o Id e o tipo do usuário logado e associar estes valores as propriedades do objeto
-$noticia->usuario->setId($_SESSION["id"]);
-$noticia->usuario->setTipo($_SESSION["tipo"]);
+/* Capturando o id e o tipo do usuário logado
+e associando estes valores às propriedades do objeto */
+$noticia->usuario->setId($_SESSION['id']);
+$noticia->usuario->setTipo($_SESSION['tipo']);
 
 $listaDeNoticias = $noticia->listar();
-
 
 ?>
 
@@ -19,7 +19,10 @@ $listaDeNoticias = $noticia->listar();
 	<article class="col-12 bg-white rounded shadow my-1 py-4">
 		
 		<h2 class="text-center">
-		Notícias <span class="badge bg-dark"> <?=count($listaDeNoticias)?></span>
+		Notícias 
+		<span class="badge bg-dark">
+			<?=count($listaDeNoticias)?>
+		</span>
 		</h2>
 
 		<p class="text-center mt-5">
@@ -35,10 +38,10 @@ $listaDeNoticias = $noticia->listar();
 					<tr>
                         <th>Título</th>
                         <th>Data</th>
-
-						<?php if ($_SESSION["tipo"] === "admin") { ?>
-                        <th>Autor</th>
-						<?php }?>
+					
+						<?php if($_SESSION["tipo"] === "admin"){ ?>
+						<th>Autor</th>
+						<?php } ?>
 
 						<th class="text-center">Destaque</th>
 						<th class="text-center" colspan="2">Operações</th>
@@ -46,27 +49,31 @@ $listaDeNoticias = $noticia->listar();
 				</thead>
 
 				<tbody>
-				<?php foreach ($listaDeNoticias as $itemNoticia) { ?>
+
+<?php foreach($listaDeNoticias as $itemNoticia) { ?>
 					<tr>
-                        <td> <?= $itemNoticia["titulo"]?>  </td>
-                        <td> <?= $itemNoticia["data"]?> </td>
-						<?php if ($_SESSION["tipo"] === "admin") { ?>
-                        <td> <?= $itemNoticia["autor"]?>  </td>
-						<?php }?>
-                        <td> <?= $itemNoticia["destaque"]?>  </td>
+                        <td> <?=$itemNoticia['titulo']?> </td>
+                        <td> <?=$itemNoticia['data']?> </td>
+
+                        <?php if($_SESSION["tipo"] === "admin"){ ?>
+						<td> <?=$itemNoticia['autor']?> </td>
+						<?php } ?>
+
+						<td><?=$itemNoticia['destaque']?></td>
+
 						<td class="text-center">
 							<a class="btn btn-warning" 
-							href="noticia-atualiza.php?id=<?=$noticia->usuario->getId($_SESSION["id"])?>">
+							href="noticia-atualiza.php?id=<?=$itemNoticia['id']?>">
 							<i class="bi bi-pencil"></i> Atualizar
 							</a>
 						
 							<a class="btn btn-danger excluir" 
-							href="noticia-exclui.php?id=<?=$noticia->usuario->getId($_SESSION["id"])?>">
+							href="noticia-exclui.php?id=<?=$itemNoticia['id']?>">
 							<i class="bi bi-trash"></i> Excluir
 							</a>
 						</td>
 					</tr>
-					<?php }?>
+<?php } ?>
 				</tbody>                
 			</table>
 	</div>
@@ -78,4 +85,3 @@ $listaDeNoticias = $noticia->listar();
 <?php 
 require_once "../inc/rodape-admin.php";
 ?>
-
