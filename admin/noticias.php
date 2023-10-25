@@ -8,6 +8,7 @@ $noticia = new Noticia;
 $noticia->usuario->setId($_SESSION["id"]);
 $noticia->usuario->setId($_SESSION["tipo"]);
 
+$noticia->listar();
 
 ?>
 

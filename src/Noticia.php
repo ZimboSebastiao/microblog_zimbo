@@ -84,8 +84,6 @@ final class Noticia {
             die("Erro ao ler noticias: ".$erro->getMessage());
         }    
         
-        
-
         return $resultado;
     }
 
