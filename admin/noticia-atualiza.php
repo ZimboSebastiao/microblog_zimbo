@@ -10,7 +10,15 @@ $noticia->usuario->setId($_SESSION["id"]);
 $noticia->usuario->setTipo($_SESSION["tipo"]);
 $noticia->setId($_GET['id']);
 $dados = $noticia->listarUm();
-// Utilitarios::dump($dados);
+
+if (isset($_POST["atualizar"])) {
+    $noticia->setTitulo($_POST["titulo"]);
+    $noticia->setTexto($_POST["texto"]);
+    $noticia->setResumo($_POST["resumo"]);
+    $noticia->setDestaque($_POST["destaque"]);
+    $noticia->categoria->setId($_POST["categoria"]);
+    
+}
 ?>
 
 
