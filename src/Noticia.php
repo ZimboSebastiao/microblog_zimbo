@@ -62,18 +62,18 @@ final class Noticia {
 
     // Ler todas Noticia
     public function listar():array {
-        $sql = "SELECT 
-                    noticias.titulo, 
-                    noticias.data, 
-                    usuarios.nome AS autor, 
-                    usuarios.id,
-                    noticias.destaque
-                FROM noticias INNER JOIN usuarios
-                ON noticias.usuario_id = usuarios.id
-                ORDER BY data DESC
-                 ";
 
-
+        // Se o tipo do usuario logado for o admin
+        if ($this->usuario->getTipo() === "admin") {
+           // Considere o sql abaixo (Pega tudo de todos)
+            $sql = "SELECT noticias.titulo, noticias.data, usuarios.nome AS autor, usuarios.id, noticias.destaque
+                    FROM noticias INNER JOIN usuarios ON noticias.usuario_id = usuarios.id ORDER BY data DESC";
+        } else {
+            // Senão, considere o sql abaixo (Pega somente referente ao editor)
+            $sql = "SELECT titulo, data, destaque
+                    FROM noticias WHERE usuario_id = :usuario_id ORDER BY data DESC";
+        }
+        
         
         try {
             $consulta = $this->conexao->prepare($sql);
