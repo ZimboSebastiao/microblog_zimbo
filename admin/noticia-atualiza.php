@@ -18,6 +18,21 @@ if (isset($_POST["atualizar"])) {
     $noticia->setDestaque($_POST["destaque"]);
     $noticia->categoria->setId($_POST["categoria"]);
     
+    // lógica para atualizar a foto (se necessário)
+
+    // Se o campo imagem estiver vazio, significa que p usuário não quer trocar de imagem. Portanto vamos manter a imagem existente
+
+    if (empty($_FILES["imagem"] ["name"])) {
+        $noticia->setImagem($_POST["imagem-existente"]);
+    } else {
+        $noticia->upload($_FILES["imagem"]);
+        $noticia->setImagem($_FILES["imagem"]["name"]);
+    }
+
+    // Caso contrário, vamos pegar a referencia (nome/extensão) da nova imagem, fazer o upload do novo arquivo e enviar a referencia para o objeto usando o setter
+
+    $noticia->atualizar();
+    header("location:noticias.php");
 }
 ?>
 
