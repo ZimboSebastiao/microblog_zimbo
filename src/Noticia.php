@@ -134,13 +134,13 @@ final class Noticia {
         if ($this->usuario->getTipo() === "admin") {
             $sql = "UPDATE noticias SET titulo = :titulo, texto = :texto, resumo = :resumo, imagem = :imagem, categoria_id = :categoria_id, destaque = :destaque WHERE id = :id";
         } else {
-            $sql = "UPDATE noticias SET titulo = :titulo, texto = :texto, resumo = :resumo, imagem = :imagem, categoria_id = :categoria_id, destaque = :destaque WHERE id = :id AND usuario_id = usuario_id";
+            $sql = "UPDATE noticias SET titulo = :titulo, texto = :texto, resumo = :resumo, imagem = :imagem, categoria_id = :categoria_id, destaque = :destaque WHERE id = :id AND usuario_id = :usuario_id";
 
         }
        
         try {
             $consulta = $this->conexao->prepare($sql);
-            $consulta->bindValue(":id", $this->titulo, PDO::PARAM_INT);
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
             $consulta->bindValue(":titulo", $this->titulo, PDO::PARAM_STR);
             $consulta->bindValue(":texto", $this->texto, PDO::PARAM_STR);
             $consulta->bindValue(":resumo", $this->resumo, PDO::PARAM_STR);
