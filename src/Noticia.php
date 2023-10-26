@@ -272,7 +272,7 @@ final class Noticia {
             $consulta->execute();
             $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
         } catch (Exception $erro) {
-            die("Erro ao carregar noticias".$erro->getMessage());
+            die("Erro ao listar detalhes".$erro->getMessage());
         }
         return $resultado;
     }
