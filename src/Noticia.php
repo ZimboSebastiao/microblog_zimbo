@@ -260,6 +260,7 @@ final class Noticia {
 
     // noticia.php
 
+
     public function listarDetalhes():array{
         $sql = "SELECT noticias.id, noticias.titulo, noticias.data, usuarios.nome AS autor, noticias.texto, noticias.imagem
                 FROM noticias INNER JOIN usuarios
@@ -268,11 +269,11 @@ final class Noticia {
 
         try {
             $consulta = $this->conexao->prepare($sql);
-            $consulta->bindValue(":id", $this->id, PDO::PARAM_STR);
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
             $consulta->execute();
             $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
         } catch (Exception $erro) {
-            die("Erro ao listar detalhes".$erro->getMessage());
+            die("Erro ao abrir a noticia".$erro->getMessage());
         }
         return $resultado;
     }
