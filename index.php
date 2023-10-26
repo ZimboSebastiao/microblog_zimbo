@@ -13,7 +13,7 @@ $destaques = $noticia->listarDestaques();
         <!-- INÍCIO Card -->
 		<div class="col-md-6 my-1 px-md-1">
             <article class="card shadow-sm h-100">
-                <a href="noticia.php" class="card-link">
+                <a href="noticia.php?id=<?= $itemDestaque["id"]?>" class="card-link">
                     <img src="imagens/<?= $itemDestaque["imagem"]?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h3 class="fs-4 card-title"><?= $itemDestaque["titulo"]?></h3>

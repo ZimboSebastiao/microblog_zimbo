@@ -243,6 +243,19 @@ final class Noticia {
         return $resultado;
     }
 
+    public function listarTodas():array {
+        $sql = "SELECT id, data, titulo, resumo FROM noticias
+                ORDER BY data DESC";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->execute();
+            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $erro) {
+        die("Erro ao carregar noticias: ".$erro->getMessage());
+        }
+        return $resultado;
+    }
 
 
     public function getId(): int
