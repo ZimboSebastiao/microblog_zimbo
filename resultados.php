@@ -1,42 +1,28 @@
 <?php
 
+use Microblog\Noticia;
 use Microblog\Utilitarios;
-
-require_once "inc/cabecalho.php";
-$noticia->setTermo($_GET["busca"]);
+require_once "vendor/autoload.php";
+$noticia = new Noticia;
+$noticia->setTermo($_POST["busca"]);
 $resultados = $noticia->busca();
 // Utilitarios::dump($resultados);
 
+$quantidade = count($resultados);
+
+if ($quantidade > 0) {
 ?>
+    <h2 class="fs-5" >Resultados: <span><?= $quantidade?></span></h2>
+    <div>
+        <?php foreach ($resultados as $itemNoticias) {?>
+        <a class="list-group-item list-group-item-action" href="noticia.php?id=<?=$itemNoticias["id"]?>">
+        <?=$itemNoticias["titulo"]?>
+        </a>
+        <?php }?>
 
-
-<div class="row bg-white rounded shadow my-1 py-4">
-    <h2 class="col-12 fw-light">
-        Você procurou por <span class="badge bg-dark"><?= $noticia->getTermo();?></span> e
-        obteve <span class="badge bg-info"><?= count($resultados)?></span> resultados
-    </h2>
-    
-    <?php foreach ($resultados as $itemResultados) {?>
-    <div class="col-12 my-1">
-        <article class="card">
-            <div class="card-body">
-                <h3 class="fs-4 card-title fw-light"><?=$itemResultados["titulo"]?></h3>
-                <p class="card-text">
-                    <time><?=Utilitarios::formataData($itemResultados["data"])?></time> - 
-                    <?=$itemResultados["resumo"]?>.
-                </p>
-                
-                <a href="noticia.php?id=<?=$itemResultados["id"]?>" class="btn btn-primary btn-sm">Continuar lendo</a>
-            </div>
-        </article>
     </div>
-    <?php }?>
+<?php }else{?>
+    <h2 class="fs-5 text-danger">Sem nóticias</h2>
+<?php }?>
 
-
-</div>        
-
-<?php 
-require_once "inc/todas.php";
-require_once "inc/rodape.php";
-?>
 
