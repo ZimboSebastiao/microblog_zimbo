@@ -1,4 +1,15 @@
-<?php require_once "vendor/autoload.php"; ?>
+<?php
+// Output Buffer (Gerenciamento de memória de saída)
+ob_start();
+require_once "vendor/autoload.php"; 
+use Microblog\Noticia;
+use Microblog\Utilitarios;
+
+$noticia = new Noticia;
+$listaCategorias = $noticia->categoria->ler();
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br" class="h-100">
 <head>
@@ -34,9 +45,9 @@
             Categorias
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="noticias-por-categoria.php">Ciência</a></li>
-            <li><a class="dropdown-item" href="noticias-por-categoria.php">Educação</a></li>
-            <li><a class="dropdown-item" href="noticias-por-categoria.php">Tecnologia</a></li>
+            <?php foreach ($listaCategorias as $itemCategoria) { ?>
+            <li><a class="dropdown-item" href="noticias-por-categoria.php?id=<?=$itemCategoria["id"]?>"><?= $itemCategoria["nome"]?></a></li>
+            <?php }?>
           </ul>
         </li>
         <li class="nav-item">
