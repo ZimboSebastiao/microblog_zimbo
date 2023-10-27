@@ -22,7 +22,7 @@ $resultados = $noticia->busca();
             <div class="card-body">
                 <h3 class="fs-4 card-title fw-light"><?=$itemResultados["titulo"]?></h3>
                 <p class="card-text">
-                    <time><?=$itemResultados["data"]?></time> - 
+                    <time><?=Utilitarios::formataData($itemResultados["data"])?></time> - 
                     <?=$itemResultados["resumo"]?>.
                 </p>
                 

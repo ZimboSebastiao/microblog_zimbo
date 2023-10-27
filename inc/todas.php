@@ -13,7 +13,7 @@ $todasNoticias = $noticia->listarTodas();
                     <h2 class="fs-6 text-center text-muted">Todas as notícias</h2>
                     <?php foreach ($todasNoticias as $todas) {?>
                     <a href="noticia.php?id=<?=$todas["id"]?>" class="list-group-item list-group-item-action">
-                         <h3 class="fs-6"><time><?=$todas["data"]?></time> - <?=$todas["titulo"]?></h3>
+                         <h3 class="fs-6"><time><?=Utilitarios::formataData($todas["data"])?></time> - <?=$todas["titulo"]?></h3>
                         <p><?=$todas["resumo"]?></p>
                     </a>
                     <?php } ?>
