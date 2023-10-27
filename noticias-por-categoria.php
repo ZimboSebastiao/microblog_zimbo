@@ -5,14 +5,14 @@ use Microblog\Utilitarios;
 require_once "inc/cabecalho.php";
 $noticia->categoria->setId($_GET["id"]);
 $dados = $noticia->listarPorCategoria();
-// Utilitarios::dump($dados)
+// Utilitarios::dump($dados);
 ?>
 
 
 <div class="row my-1 mx-md-n1">
 
     <article class="col-12">
-        <h2 class=" ">Notícias sobre <span class="badge bg-primary">  </span> </h2>
+        <h2 class=" ">Notícias sobre <span class="badge bg-primary"> <?=$dados[0]["categoria"]?> </span> </h2>
         
         <div class="row my-1">
             <div class="col-12 px-md-1">
