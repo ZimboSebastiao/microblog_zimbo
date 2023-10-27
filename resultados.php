@@ -1,6 +1,11 @@
-<?php 
+<?php
+
+use Microblog\Utilitarios;
+
 require_once "inc/cabecalho.php";
 $noticia->setTermo($_GET["busca"]);
+$resultados = $noticia->busca();
+Utilitarios::dump($resultados);
 
 ?>
 
