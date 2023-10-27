@@ -23,7 +23,7 @@ $dados = $noticia->listarPorCategoria();
                     <?php foreach ($dados as $itemNotica) {?>
                     <a href="noticia.php?id=<?=$itemNotica["id"]?>" class="list-group-item list-group-item-action">
                         <h3 class="fs-6"><?= $itemNotica["titulo"]?></h3>
-                        <p><time><?= $itemNotica["data"]?></time> - <?= $itemNotica["autor"]?></p>
+                        <p><time><?=Utilitarios::formataData($itemNotica["data"])?></time> - <?= $itemNotica["autor"]?></p>
                         <p><?= $itemNotica["resumo"]?></p>
                     </a>
                    <?php }?>
