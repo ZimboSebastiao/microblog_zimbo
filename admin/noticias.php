@@ -16,20 +16,25 @@ $listaDeNoticias = $noticia->listar();
 
 
 <div class="row">
-	<article class="col-12 bg-white rounded shadow my-1 py-4">
-		
-		<h2 class="text-center">
-		Notícias 
-		<span class="badge bg-dark">
-			<?=count($listaDeNoticias)?>
-		</span>
-		</h2>
+	<article class="col-12  my-1 py-4">
+		<div class="text-category" >
 
-		<p class="text-center mt-5">
-			<a class="btn btn-primary" href="noticia-insere.php">
-			<i class="bi bi-plus-circle"></i>	
-			Inserir nova notícia</a>
-		</p>
+			<h4>
+			Notícias 
+			</h4>
+
+			<h4>
+			Total:		
+				<?=count($listaDeNoticias)?>
+			</h4>
+	
+			<p>
+				<a class="btn bg-gray" href="noticia-insere.php">
+				<i class="bi bi-newspaper"></i>	
+				Adicionar</a>
+			</p>
+		</div>
+		
 				
 		<div class="table-responsive">
 		
@@ -62,14 +67,14 @@ $listaDeNoticias = $noticia->listar();
 						<td><?=$itemNoticia['destaque']?></td>
 
 						<td class="text-center">
-							<a class="btn btn-warning" 
+							<a class="btn btn-operations" 
 							href="noticia-atualiza.php?id=<?=$itemNoticia['id']?>">
-							<i class="bi bi-pencil"></i> Atualizar
+							<i class="bi bi-pencil"></i> 
 							</a>
 						
-							<a class="btn btn-danger excluir" 
+							<a class="btn btn-operations" 
 							href="noticia-exclui.php?id=<?=$itemNoticia['id']?>">
-							<i class="bi bi-trash"></i> Excluir
+							<i class="bi bi-trash"></i>
 							</a>
 						</td>
 					</tr>

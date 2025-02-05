@@ -3,5 +3,9 @@
         "psr-4" : {
             "Microblog\\" : "src/"
         }
+    },
+    "require": {
+        "erusev/parsedown": "^1.7",
+        "erusev/parsedown-extra": "^0.8.1"
     }
 }

@@ -90,7 +90,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `tipo`) VALUES
-(1, 'Zimbo ', 'gloriasenac7@gmail.com', '$2y$10$hs9oVmtYRKuvsseSRbHGwOVTkr1aR8jDlAmWSEIJ7djR01umaKX.e', 'admin'),
+(1, 'Zimbo ', 'zimbo@gmail.com', '$2a$12$G9e5H9945l.6ucWdoO4wl.DsTGqBeM2U4T/RMluKBd5XZZGSg0k8O', 'admin'),
 (3, 'Adriana', 'gloriasebastiao7@gmail.com', '$2y$10$h3VmRjHm1jkaQVcLArOmkOgMzA6vvYo75naWS/rfKk1i1Z/nxhm0e', 'admin'),
 (5, 'Ozzy', 'ozzy.@gmail.com', '$2y$10$.C50zL8LVs.d4te2Zp2Hg.dg2J7jFSIclPgnhE9N0NX4FZHpA2VlC', 'editor');
 

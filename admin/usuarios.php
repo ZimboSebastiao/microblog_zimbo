@@ -12,17 +12,22 @@ $listaUsuario = $usuario->listar();
 
 
 <div class="row">
-	<article class="col-12 bg-white rounded shadow my-1 py-4">
-		
-		<h2 class="text-center">
-		Usuários <span class="badge bg-dark"><?=count($listaUsuario)?></span>
-		</h2>
+	<article class="col-12  my-1 py-4">
+		<div class="text-category">
+			<h4 class="text-center">
+			Usuários 
+			</h4>
 
-		<p class="text-center mt-5">
-			<a class="btn btn-primary" href="usuario-insere.php">
-			<i class="bi bi-plus-circle"></i>	
-			Inserir novo usuário</a>
-		</p>
+			<h4 class="text-center">
+			Total: <?=count($listaUsuario)?>
+			</h4>
+
+			
+				<a class="btn  bg-gray" href="usuario-insere.php">
+				<i class="bi bi-person"></i>	
+				Adicionar</a>
+			
+		</div>
 				
 		<div class="table-responsive">
 		
@@ -42,15 +47,16 @@ $listaUsuario = $usuario->listar();
 						<td> <?=$user["nome"]?> </td>
 						<td> <?=$user["email"]?> </td>
 						<td> <?=$user["tipo"]?> </td>
+
 						<td class="text-center">
-							<a class="btn btn-warning" 
+							<a class="btn btn-operations" 
 							href="usuario-atualiza.php?id=<?=$user["id"]?>">
-							<i class="bi bi-pencil"></i> Atualizar
+							<i class="bi bi-pencil"></i> 
 							</a>
 						
-							<a class="btn btn-danger excluir" 
+							<a class="btn btn-operations" 
 							href="usuario-exclui.php?id=<?=$user["id"]?>">
-							<i class="bi bi-trash"></i> Excluir
+							<i class="bi bi-trash"></i> 
 							</a>
 						</td>
 					</tr>

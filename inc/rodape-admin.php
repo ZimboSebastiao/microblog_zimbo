@@ -2,8 +2,8 @@
 </main>
 
 <footer class="footer mt-auto py-3 bg-dark border-top">
-    <div class="container text-center text-white">
-        Microblog é um site fictício desenvolvido para fins didáticos | Senac Penha &copy; 2023
+    <div class="container text-center  text-white">
+    AEASP é uma plataforma dedicada a apoiar estudantes angolanos residentes em São Paulo | AEASP &copy; 2025
     </div>
 </footer>
 

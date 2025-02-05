@@ -226,22 +226,36 @@ final class Noticia {
 
 
     // Métodos da área pública
-    public function listarDestaques():array {
-        $sql = "SELECT id, titulo, resumo, imagem FROM noticias
-                WHERE destaque = :destaque
-                ORDER BY data DESC";
-
-
+    public function listarDestaques(): array {
+        $sql = "SELECT 
+                    noticias.id, 
+                    noticias.titulo, 
+                    noticias.resumo, 
+                    noticias.imagem, 
+                    noticias.data, 
+                    usuarios.nome AS autor,
+                    COALESCE(categorias.nome, 'Sem Categoria') AS categoria
+                FROM noticias
+                INNER JOIN usuarios ON noticias.usuario_id = usuarios.id
+                LEFT JOIN categorias ON noticias.categoria_id = categorias.id
+                WHERE noticias.destaque = :destaque
+                ORDER BY noticias.data DESC";
+    
         try {
             $consulta = $this->conexao->prepare($sql);
             $consulta->bindValue(":destaque", $this->destaque, PDO::PARAM_STR);
             $consulta->execute();
             $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
         } catch (Exception $erro) {
-           die("Erro ao carregar destaques: ".$erro->getMessage());
+            die("Erro ao carregar destaques: " . $erro->getMessage());
         }
+        
         return $resultado;
     }
+    
+
+    
+    
 
     // Index.php
     public function listarTodas():array {
@@ -261,10 +275,18 @@ final class Noticia {
     // noticia.php
 
 
-    public function listarDetalhes():array{
-        $sql = "SELECT noticias.id, noticias.titulo, noticias.data, usuarios.nome AS autor, noticias.texto, noticias.imagem
-                FROM noticias INNER JOIN usuarios
-                ON noticias.usuario_id = usuarios.id
+    public function listarDetalhes(): array {
+        $sql = "SELECT 
+                    noticias.id, 
+                    noticias.titulo, 
+                    noticias.data, 
+                    usuarios.nome AS autor, 
+                    noticias.texto, 
+                    noticias.imagem,
+                    COALESCE(categorias.nome, 'Sem Categoria') AS categoria
+                FROM noticias
+                INNER JOIN usuarios ON noticias.usuario_id = usuarios.id
+                LEFT JOIN categorias ON noticias.categoria_id = categorias.id
                 WHERE noticias.id = :id";
 
         try {
@@ -272,11 +294,16 @@ final class Noticia {
             $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
             $consulta->execute();
             $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+            
+            
+    
         } catch (Exception $erro) {
-            die("Erro ao abrir a noticia".$erro->getMessage());
+            die("Erro ao abrir a notícia: " . $erro->getMessage());
         }
+        
         return $resultado;
     }
+    
 
 
     // noticias-por-categoria.php

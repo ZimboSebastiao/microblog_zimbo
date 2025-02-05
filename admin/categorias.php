@@ -10,17 +10,21 @@ $listaCategoria = $categoria->ler();
 
 
 <div class="row">
-	<article class="col-12 bg-white rounded shadow my-1 py-4">
+	<article class="col-12  my-1 py-4">
 		
-		<h2 class="text-center">
-		Categorias <span class="badge bg-dark"><?= count($listaCategoria)?></span>
-		</h2>
+		<div class="text-category">
+			<h4>
+			Categorias 
+			</h4>
 
-		<p class="text-center mt-5">
-			<a class="btn btn-primary" href="categoria-insere.php">
-			<i class="bi bi-plus-circle"></i>	
-			Inserir nova categoria</a>
-		</p>
+			<h4>
+			Total: <?= count($listaCategoria)?>
+			</h4>
+
+			<a class="btn bg-gray" href="categoria-insere.php">
+			<i class="bi bi bi-tags"></i>	
+			Adicionar</a>
+		</div>
 				
 		<div class="table-responsive">
 		
@@ -28,7 +32,7 @@ $listaCategoria = $categoria->ler();
 				<thead class="table-light">
 					<tr>
 						<th>Nome</th>
-						<th class="text-center">Operações</th>
+						<th class="text-center"></th>
 					</tr>
 				</thead>
 
@@ -36,15 +40,16 @@ $listaCategoria = $categoria->ler();
 				<?php foreach($listaCategoria as $categ){ ?>
 					<tr>
 						<td> <?=$categ["nome"]?> </td>
+
 						<td class="text-center">
-							<a class="btn btn-warning" 
+							<a class="btn  btn-operations" 
 							href="categoria-atualiza.php?id=<?=$categ["id"]?>">
-							<i class="bi bi-pencil"></i> Atualizar
+							<i class="bi bi-pencil"></i>
 							</a>
 						
-							<a class="btn btn-danger excluir" 
+							<a class="btn btn-operations" 
 							href="categoria-exclui.php?id=<?=$categ["id"]?>">
-							<i class="bi bi-trash"></i> Excluir
+							<i class="bi bi-trash"></i>
 							</a>
 						</td>
 					</tr>

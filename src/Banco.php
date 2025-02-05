@@ -6,7 +6,7 @@ abstract class Banco {
     private static string $servidor = "localhost";
     private static string $usuario = "root";
     private static string $senha = "";
-    private static string $banco = "microblog-zimbo";
+    private static string $banco = "microblog";
 
     // Operador ? "nullable typehint"
     // Quando usado, indica que a propriedade/atributo da classe pode conter um valor null OU pode ser o tipo PDO

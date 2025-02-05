@@ -38,7 +38,7 @@ if (isset($_POST["atualizar"])) {
 
 
 <div class="row">
-    <article class="col-12 bg-white rounded shadow my-1 py-4">
+    <article class="col-12 w my-1 py-4">
 
         <h2 class="text-center">
             Atualizar dados da notícia

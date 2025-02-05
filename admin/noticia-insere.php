@@ -42,7 +42,7 @@ if (isset($_POST['inserir'])) {
 
 
 <div class="row">
-	<article class="col-12 bg-white rounded shadow my-1 py-4">
+	<article class="col-12  my-1 py-4">
 		
 		<h2 class="text-center">
 		Inserir nova notícia

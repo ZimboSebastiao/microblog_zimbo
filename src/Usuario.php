@@ -125,7 +125,7 @@ class Usuario {
         
         try {
             $consulta = $this->conexao->prepare($sql);
-            $consulta->bindValue("email", $this->email, PDO::PARAM_STR);
+            $consulta->bindValue(":email", $this->email, PDO::PARAM_STR);
             $consulta->execute();
             $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
             
