@@ -42,12 +42,6 @@ $listaCategorias = $noticia->categoria->ler();
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="index.php">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="sobre.php">Sobre Nós</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="index.php">Guia do Estudantes</a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categorias
@@ -59,16 +53,20 @@ $listaCategorias = $noticia->categoria->ler();
           </ul>
         </li>
         <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="sobre.php">Sobre Nós</a>
+        </li>
+        
+        <li class="nav-item">
           <a class="nav-link" href="admin/index.php"><i class="bi bi-person-lock"></i> Acesso admin</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="index.php">Contato</a>
+          <a class="nav-link" aria-current="page" href="contato.php">Contato</a>
         </li>
         
       </ul>
 
       <form autocomplete="off" class="d-flex" action="resultados.php" method="GET">
-        <input name="busca" class="form-control me-2" type="search" placeholder="Pesquise aqui" aria-label="Pesquise aqui">
+        <input name="busca" class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
         <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">OK</button>
       </form>
     </div>

@@ -313,7 +313,7 @@ body {
     background: url(../imagens/close-up.jpg);
     background-size: cover;
     background-attachment: fixed;
-    filter: grayscale(25%);    
+    filter: grayscale(20%);    
     z-index: -1;
 }
 
