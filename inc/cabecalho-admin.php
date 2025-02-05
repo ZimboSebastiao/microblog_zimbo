@@ -18,10 +18,10 @@ if (isset($_GET['sair'])) $sessao->logout();
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AEASP</title>
+<title>AAJA-SP | ADMIN</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
-<link rel="icon" type="image/png" sizes="32x32" href="../imagens/favicon-admin.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../imagens/favicon-adm.png">
 <link rel="stylesheet" href="../css/style.css">
 
 </head>
@@ -29,9 +29,9 @@ if (isset($_GET['sair'])) $sessao->logout();
     
 <header id="topo" class="border-bottom sticky-top">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+<nav class="navbar navbar-expand-lg  justify-content-between">
   <div class="container">
-    <h1><a class="navbar-brand" href="index.php"><i class="bi bi-unlock"></i> Admin | AEASP</a></h1>
+    <h1><a class="navbar-brand" href="index.php"><i class="bi bi-unlock"></i> Admin | AAJA-SP</a></h1>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -64,7 +64,7 @@ if (isset($_GET['sair'])) $sessao->logout();
                 <a class="nav-link" href="../index.php" target="_blank">Área pública</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link fw-bold" href="?sair"> <i class="bi bi-x-circle"></i> Sair</a>
+                <a class="nav-link" href="?sair"> <i class="bi bi-box-arrow-left"></i> Logout</a>
             </li>
         </ul>
 

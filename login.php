@@ -1,9 +1,9 @@
 <?php 
+require_once "inc/cabecalho.php";
 use Microblog\ControleDeAcesso;
 use Microblog\Usuario;
 use Microblog\Utilitarios;
 
-require_once "inc/cabecalho.php";
 
 
 // Programação das mensagens de feedback

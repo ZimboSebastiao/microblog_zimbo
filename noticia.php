@@ -32,7 +32,7 @@ $conteudoFormatado = $parsedown->text($textoCorrigido);
 ?>
 
 
-<div class="row my-1 mx-md-n1">
+<div class="row my-1 mx-md-n1 container">
 
     <article class="col-12 text-center">
         <div class="title-detalhe-div" >

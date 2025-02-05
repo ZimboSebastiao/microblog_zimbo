@@ -33,7 +33,7 @@ require_once "../inc/cabecalho-admin.php";
         <div class="welcome">
             <div class="text-welcome text-center">
 
-                <p class="text-admin">Bem-vindo de volta, <?=$_SESSION["nome"]?>!</p>
+                <p class="text-admin">Olá, <?=$_SESSION["nome"]?>!</p>
         
                 <?php
                 if (isset($_GET["perfil_atualizado"])) { ?>
@@ -41,7 +41,7 @@ require_once "../inc/cabecalho-admin.php";
                 <?php } ?>
         
                 <p class="fs-5">Você está no <b>painel de controle e administração</b> do
-                site AEASP.</p>
+                site AAJA-SP.</p>
                 <p class="fs-5">Seu <b>nível de acesso</b> é <span class="badge bg-light acess"> <?=$_SESSION["tipo"]?> </span>.</p>
             </div>
 
