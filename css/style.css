@@ -53,7 +53,7 @@ body {
 }
 
 .bg-form {
-    background-color: #0c417ae6;
+    background-color: rgba(255, 6, 6, 0.735);
 }
 
 .titulo-form {
@@ -295,7 +295,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden; 
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(255, 6, 6, 0.379); 
 }
 
 #section1 {
@@ -310,7 +310,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(../imagens/close-up.jpg);
+    background: url(../imagens/group.jpg);
     background-size: cover;
     background-attachment: fixed;
     filter: grayscale(20%);    
@@ -495,7 +495,7 @@ body {
     font-size: 20px;
     color: #444;
     cursor: pointer;
-    background-color: #0056b3;
+    
     
 }
 
@@ -543,6 +543,31 @@ body {
 
 
 /* ===================== FIM SOBRE ===================== */
+
+
+
+/* ===================== CONTATO ===================== */
+
+
+#section-contact {
+    position: relative;
+    
+}
+
+#section-contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../imagens/support.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    filter: grayscale(20%);    
+    z-index: -1;
+}
+/* ===================== FIM  CONTATO ===================== */
 
 
 

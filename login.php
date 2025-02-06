@@ -48,7 +48,7 @@ if (isset($_GET["campos_obrigatorios"])) {
 						</div>
 		
 						
-						<button class="btn btn-primary btn-lg btn-size " name="entrar" type="submit">Entrar</button>
+						<button class="btn btn-warning btn-lg btn-size " name="entrar" type="submit">Entrar</button>
 		
 					</form>
 		

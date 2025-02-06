@@ -14,7 +14,12 @@ setlocale(LC_TIME, 'pt_BR.utf8', 'pt_BR', 'Portuguese_Brazil', 'Brazil');
 
 ?>
 
-
+<section class="parallax" id="section-contact">
+    <div class="message">
+      <h1 style="color: white; margin-bottom: 30px;">Contate-nos</h1>
+      
+    </div>
+</section>
 
 
 <?php 
