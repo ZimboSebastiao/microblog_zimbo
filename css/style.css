@@ -567,6 +567,66 @@ body {
     filter: grayscale(20%);    
     z-index: -1;
 }
+
+.section-form {
+    /* background-color: #0056b3; */
+    padding: 40px;
+}
+
+.div-form {
+    /* background-color: #444; */
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.img-contact {
+    width: 400px;
+    
+}
+
+.contact-form {
+    max-width: 380px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.contact-form button {
+
+    width: 35%;
+    padding: 8px;
+    border: 1px solid #fde906;
+    border-radius: 30px;
+    font-size: 16px;
+
+}
+
+
+.contact-form button {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+.contact-form button:hover {
+    background-color: #f0e739;
+}
+
+
 /* ===================== FIM  CONTATO ===================== */
 
 
