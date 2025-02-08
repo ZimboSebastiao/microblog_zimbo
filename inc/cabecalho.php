@@ -22,6 +22,7 @@ $listaCategorias = $noticia->categoria->ler();
 <title>AAJA-SP</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+
 <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon-adm.png">
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -34,7 +35,7 @@ $listaCategorias = $noticia->categoria->ler();
     <h1 class="ms-n1"><a class="navbar-brand" href="index.php"><img class="img-logo" src="imagens/logo-between.png" alt=""></a></h1>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <i class="bi bi-list-nested"></i>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -57,10 +58,13 @@ $listaCategorias = $noticia->categoria->ler();
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" href="admin/index.php"><i class="bi bi-person-lock"></i> Acesso admin</a>
+          <a class="nav-link" aria-current="page" href="ajuda.php">Ajuda</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="contato.php">Contato</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="admin/index.php"><i class="bi bi-person-lock"></i> Acesso admin</a>
         </li>
         
       </ul>

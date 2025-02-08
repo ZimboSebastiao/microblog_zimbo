@@ -99,7 +99,7 @@ if (isset($_POST['inserir'])) {
 		
 	</article>
 </div>
-
+<scrp
 
 <?php 
 require_once "../inc/rodape-admin.php";

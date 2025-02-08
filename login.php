@@ -113,6 +113,6 @@ if (isset($_GET["campos_obrigatorios"])) {
 
 <?php 
 
-// require_once "inc/rodape.php";
+require_once "inc/rodape.php";
 ?>
 

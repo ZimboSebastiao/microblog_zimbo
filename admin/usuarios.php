@@ -54,7 +54,7 @@ $listaUsuario = $usuario->listar();
 							<i class="bi bi-pencil"></i> 
 							</a>
 						
-							<a class="btn btn-operations" 
+							<a class="btn btn-operations excluir-btn" 
 							href="usuario-exclui.php?id=<?=$user["id"]?>">
 							<i class="bi bi-trash"></i> 
 							</a>

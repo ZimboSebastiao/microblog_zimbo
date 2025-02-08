@@ -47,7 +47,7 @@ $listaCategoria = $categoria->ler();
 							<i class="bi bi-pencil"></i>
 							</a>
 						
-							<a class="btn btn-operations" 
+							<a class="btn btn-operations excluir-btn" 
 							href="categoria-exclui.php?id=<?=$categ["id"]?>">
 							<i class="bi bi-trash"></i>
 							</a>

@@ -72,7 +72,7 @@ $listaDeNoticias = $noticia->listar();
 							<i class="bi bi-pencil"></i> 
 							</a>
 						
-							<a class="btn btn-operations" 
+							<a class="btn btn-operations excluir-btn" 
 							href="noticia-exclui.php?id=<?=$itemNoticia['id']?>">
 							<i class="bi bi-trash"></i>
 							</a>

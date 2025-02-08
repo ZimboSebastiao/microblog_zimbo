@@ -16,11 +16,12 @@ setlocale(LC_TIME, 'pt_BR.utf8', 'pt_BR', 'Portuguese_Brazil', 'Brazil');
 
 
 
-<div class="row g-2 box-index">
+<div class="row g-3 box-index">
         <?php foreach ($destaques as $itemDestaque) {?>
         <!-- INÍCIO Card -->
+         
 		<div class="col-12 col-md-6 col-lg-3 card-index">
-        <article class="card border-0 rounded-0 shadow-sm h-100">
+        <article class="card border-0 rounded-0 shadow-sm h-100 ">
             <a href="noticia.php?id=<?= $itemDestaque["id"]?>" class="card-link">
                 <img src="imagens/<?= $itemDestaque["imagem"]?>" class="card-img-top rounded-0" alt="...">
                 <div class="card-body d-flex flex-column">
@@ -44,7 +45,7 @@ setlocale(LC_TIME, 'pt_BR.utf8', 'pt_BR', 'Portuguese_Brazil', 'Brazil');
                 </div>
             </a>
         </article>
-</div>
+        </div>
 
         <?php } ?>
 		<!-- FIM Card -->

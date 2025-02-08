@@ -65,17 +65,19 @@ setlocale(LC_TIME, 'pt_BR.utf8', 'pt_BR', 'Portuguese_Brazil', 'Brazil');
             <!-- Card 1 -->
             <div class="col-12 col-md-6 col-lg-3">
                 <article class="card small-card border-0 rounded shadow-sm position-relative">
-                    <img src="./imagens/college.jpg" class="card-img-top" alt="Imagem 1">
+                    <img src="./imagens/cabral1.jpg" class="card-img-top" alt="Imagem 1">
                     
                     <!-- Div sobreposta -->
                     <div class="overlay-circle">
-                        <h5 class="title-card-members">Cabral Augusto</h5>
-                        <p class="text-card-members">Vice Presidente</p>
+                        <h5 class="title-card-members">João Cabral</h5>
+                        <p class="text-card-members">Presidente</p>
                     </div>
                     
                     <div class="card-bod d-flex justify-content-center">
-                        <i class="bi bi-facebook me-3"></i>
-                        <i class="bi bi-instagram"></i>
+                        <a href="https://www.facebook.com/joaoluis.joao.56"><i class="bi bi-facebook me-3"></i></a>
+                        <a href="https://www.instagram.com/cabral.ysn?igsh=MWlsM3NiZGNicjUwbA%3D%3D"><i class="bi bi-instagram"></i></a>
+                        
+                        
                     </div>
                 </article>
             </div>
@@ -83,17 +85,17 @@ setlocale(LC_TIME, 'pt_BR.utf8', 'pt_BR', 'Portuguese_Brazil', 'Brazil');
             <!-- Card 2 -->
             <div class="col-12 col-md-6 col-lg-3">
                 <article class="card small-card border-0 rounded shadow-sm position-relative">
-                    <img src="./imagens/college.jpg" class="card-img-top" alt="Imagem 1">
+                    <img src="./imagens/lukenia1.jpg" class="card-img-top img-members" alt="Imagem 1">
                     
                     <!-- Div sobreposta -->
                     <div class="overlay-circle">
-                        <h5 class="title-card-members">Cabral Augusto</h5>
+                        <h5 class="title-card-members">Lukénia Gonçalves</h5>
                         <p class="text-card-members">Vice Presidente</p>
                     </div>
                     
                     <div class="card-bod d-flex justify-content-center">
-                        <i class="bi bi-facebook me-3"></i>
-                        <i class="bi bi-instagram"></i>
+                        <a href="https://www.facebook.com/luquenia.vaz"><i class="bi bi-facebook me-3"></i></a>
+                        <a href="https://www.instagram.com/luqueniagoncalves?igsh=MWFlYXRjMG9zcWlqMQ%3D%3D"><i class="bi bi-instagram"></i></a>
                     </div>
                 </article>
             </div>
@@ -101,17 +103,17 @@ setlocale(LC_TIME, 'pt_BR.utf8', 'pt_BR', 'Portuguese_Brazil', 'Brazil');
             <!-- Card 3 -->
             <div class="col-12 col-md-6 col-lg-3">
                 <article class="card small-card border-0 rounded shadow-sm position-relative">
-                    <img src="./imagens/college.jpg" class="card-img-top" alt="Imagem 1">
+                    <img src="./imagens/felix1.jpg" class="card-img-top" alt="Imagem 1">
                     
                     <!-- Div sobreposta -->
                     <div class="overlay-circle">
-                        <h5 class="title-card-members">Cabral Augusto</h5>
-                        <p class="text-card-members">Vice Presidente</p>
+                        <h5 class="title-card-members">Félix Sukuayela</h5>
+                        <p class="text-card-members">Secretário</p>
                     </div>
                     
                     <div class="card-bod d-flex justify-content-center">
-                        <i class="bi bi-facebook me-3"></i>
-                        <i class="bi bi-instagram"></i>
+                        <a href="https://www.instagram.com/sakuayelafelix?igsh=YnVnZjl3NzkxeWF2 "><i class="bi bi-facebook me-3"></i></a>
+                        <a href="https://www.instagram.com/sakuayelafelix?igsh=YnVnZjl3NzkxeWF2 "><i class="bi bi-instagram"></i></a>      
                     </div>
                 </article>
             </div>
@@ -119,17 +121,19 @@ setlocale(LC_TIME, 'pt_BR.utf8', 'pt_BR', 'Portuguese_Brazil', 'Brazil');
             <!-- Card 4 -->
             <div class="col-12 col-md-6 col-lg-3">
                 <article class="card small-card border-0 rounded shadow-sm position-relative">
-                    <img src="./imagens/college.jpg" class="card-img-top" alt="Imagem 1">
+                    <img src="./imagens/vela1.jpg" class="card-img-top" alt="Imagem 1">
                     
                     <!-- Div sobreposta -->
                     <div class="overlay-circle">
-                        <h5 class="title-card-members">Cabral Augusto</h5>
-                        <p class="text-card-members">Vice Presidente</p>
+                        <h5 class="title-card-members">Vela Eduardo</h5>
+                        <p class="text-card-members">Tesoreira</p>
                     </div>
                     
                     <div class="card-bod d-flex justify-content-center">
-                        <i class="bi bi-facebook me-3"></i>
-                        <i class="bi bi-instagram"></i>
+                        <a href="https://www.instagram.com/vela_sofia_nestor_eduardo?igsh=bDd3d2Z3N2w3enU5"><i class="bi bi-facebook me-3"></i></a>
+                        <a href="https://www.instagram.com/vela_sofia_nestor_eduardo?igsh=bDd3d2Z3N2w3enU5"><i class="bi bi-instagram"></i></a>
+                        
+                        
                     </div>
                 </article>
             </div>
